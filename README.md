@@ -1,6 +1,33 @@
-# Getting Started with Create React App
+# Getting Started with Create React App using TypeScript
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## To Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/manishbajagai2/data-visualization-task.git
+```
+
+Go to the project directory
+
+```bash
+  cd data-visualization-task
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
 
 ## Available Scripts
 
@@ -23,6 +50,20 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Tables Screenshot
+
+![App Screenshot](https://raw.githubusercontent.com/manishbajagai2/data-visualization-task/main/public/images/Tables.png)
+
+## Visualization of concept
+
+![Concept](https://raw.githubusercontent.com/manishbajagai2/data-visualization-task/main/public/images/concept.png)
+
+## Demo
+
+Below is the deployed version of the app
+
+https://data-visualization-task-pi.vercel.app/
 
 ## Learn More
 
