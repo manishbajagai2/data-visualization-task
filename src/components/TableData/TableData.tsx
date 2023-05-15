@@ -7,7 +7,6 @@ interface TableDataProps {
 }
 
 const TableData = ({ allMetrics, prop }: TableDataProps) => {
-    let text = ["Mean", "Median", "Mode"] // to show as header in the table
     return (
         <div>
             {allMetrics ? (
@@ -15,34 +14,35 @@ const TableData = ({ allMetrics, prop }: TableDataProps) => {
                     <thead>
                         <tr>
                             <th>Measure</th>
-                            {allMetrics.map((stat) => (
+                            {allMetrics.map((data) => (
                                 <th
-                                    key={stat.Alcohol}
                                     className={styles.centerText}
+                                    key={data.Alcohol}
                                 >
-                                    Class {stat.Alcohol}
+                                    Class {data.Alcohol}
                                 </th>
                             ))}
                         </tr>
                     </thead>
                     <tbody>
-                        {allMetrics.map((stat, idx) => (
-                            <tr key={stat.Alcohol}>
-                                <td>
-                                    {prop} &nbsp;
-                                    {text[idx]}
-                                </td>
-                                <td className={styles.centerText}>
-                                    {stat.Mean}
-                                </td>
-                                <td className={styles.centerText}>
-                                    {stat.Median}
-                                </td>
-                                <td className={styles.centerText}>
-                                    {stat.Mode}
-                                </td>
-                            </tr>
-                        ))}
+                        {Object.keys(allMetrics[0])
+                            .filter((metric) => metric !== "Alcohol")
+                            .map((metric) => (
+                                <tr key={metric}>
+                                    <td>
+                                        {prop} &nbsp;
+                                        {metric}
+                                    </td>
+                                    {allMetrics.map((data: any, index) => (
+                                        <td
+                                            className={styles.centerText}
+                                            key={index}
+                                        >
+                                            {data[metric]}
+                                        </td>
+                                    ))}
+                                </tr>
+                            ))}
                     </tbody>
                 </table>
             ) : (
